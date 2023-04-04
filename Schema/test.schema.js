@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
 
-// mongoose schema is used for giving structure and getting some of the perdefined function
-const testschema = new mongoose.Schema(
+const dataschema = new mongoose.Schema(
   {
-    name: { type: String },
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    place: { type: String, required: true },
+    NumofTraveller: { type: String, required: true },
+    PerPersonBudget: { type: String, required: true },
+    total: { type: Number, required: true },
   },
   {
     versionKey: false,
@@ -11,5 +15,5 @@ const testschema = new mongoose.Schema(
   }
 );
 
-const test = mongoose.model("test", testschema);
+const test = mongoose.model("data", dataschema);
 module.exports = test;
